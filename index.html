@@ -1,35 +1,105 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8"> 
-        <title>Ejercicio 1</title>
-    </head>
-    <body>
-        <div style="text-align:center;">
-        <object data="curriculum.png"></object>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Currículum Vitae</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 800px;
+            margin: 30px auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        header {
+            text-align: center;
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+        }
+        h1 {
+            margin: 0;
+        }
+        h2 {
+            color: #333;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+        }
+        .section {
+            margin-top: 20px;
+        }
+        .item {
+            margin-bottom: 10px;
+        }
+        .bold {
+            font-weight: bold;
+        }
+        .small {
+            color: #666;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <header>
+        <h1>Tu Nombre</h1>
+        <p>Correo: tuemail@email.com | Teléfono: 600000000</p>
+        <p>Ciudad, País</p>
+    </header>
+
+    <div class="section">
+        <h2>Perfil Profesional</h2>
+        <p>
+            Breve descripción sobre ti, tus habilidades principales y lo que buscas.
+        </p>
+    </div>
+
+    <div class="section">
+        <h2>Experiencia Laboral</h2>
+
+        <div class="item">
+            <p class="bold">Nombre de la empresa</p>
+            <p class="small">Puesto | Fecha inicio - Fecha fin</p>
+            <p>Descripción de tus tareas o logros.</p>
         </div>
-        <h2>Datos personales</h2>
-                    <object data="carnet.jpg" height="150" width="140"></object>
-        <dl>
-            <dt>Nombre: Juan</dt>
-            <dt>Apellidos: Cuesta</dt>
-            <dt>Dirección: Calle Desengaño nº21 2º-A</dt>
-            <dt>Teléfono: 752169845</dt>
-            <dt>Correo electrónico: juancuesta@gmail.com</dt>
-        </dl>
-        <h2>Formación académica</h2>
+
+    </div>
+
+    <div class="section">
+        <h2>Educación</h2>
+
+        <div class="item">
+            <p class="bold">Nombre del centro</p>
+            <p class="small">Título obtenido | Fecha</p>
+        </div>
+
+    </div>
+
+    <div class="section">
+        <h2>Habilidades</h2>
         <ul>
-            <li>Título ESO</li>
-            <li>Título bachillerato</li>
-            <li>Título B1 francés</li>
-            <li>Máster Universitario en Formación del Profesorado de Educación Secundaria</li>
+            <li>Habilidad 1</li>
+            <li>Habilidad 2</li>
+            <li>Habilidad 3</li>
         </ul>
-        <h2>Experiencia</h2>
-        <ol>
-            <li>Presidente de la comunidad durante 17 años en Desengaño 21 manejando las cuentas de la comunidad.</li>
-            <li>Profesor de Primaria y Secundaria durante 25 años enseñando principalmente Lengua y Literatura.</li>
-        </ol>
-        <h2>Otros datos de interes</h2>
-        <p>Disponibilidad de vehículo propio y amplia experiencia en el manejo de presupuestos.</p>
-    </body>
+    </div>
+
+    <div class="section">
+        <h2>Idiomas</h2>
+        <ul>
+            <li>Español - Nativo</li>
+            <li>Inglés - Nivel medio</li>
+        </ul>
+    </div>
+
+</div>
+
+</body>
 </html>
