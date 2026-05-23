@@ -8,6 +8,7 @@
             font-family: Arial, sans-serif;
             margin: 0;
             background-color: #f4f4f4;
+            color: black;
         }
         .container {
             width: 800px;
@@ -16,16 +17,27 @@
             padding: 20px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
+        .contenedor-boton {
+            text-align: left;
+            margin-bottom: 15px;
+        }
+        #boton-estilo {
+            padding: 6px 12px;
+            cursor: pointer;
+            font-family: Arial, sans-serif;
+            border: 1px solid #ccc;
+            background-color: #eee;
+            border-radius: 4px;
+        }
         header {
             text-align: center;
             border-bottom: 2px solid #333;
             padding-bottom: 15px;
         }
-        /* Estilo para que la foto quede bien centrada y redimensionada */
         .foto-perfil {
             width: 150px;
             height: 150px;
-            border-radius: 50%; /* Opcional: Hace la foto redonda */
+            border-radius: 50%;
             object-fit: cover;
             margin-bottom: 10px;
             border: 2px solid #ddd;
@@ -57,39 +69,49 @@
         }
         footer a {
             margin: 0 10px;
-            color: #0077b5; /* Color clásico de enlaces profesionales */
+            color: #0077b5;
             text-decoration: none;
         }
         footer a:hover {
             text-decoration: underline;
         }
     </style>
-        <script>
+    <script>
         function cambiarColor(){
-            // Si el fondo actual es blanco (o está vacío), cambiamos a modo oscuro
-            if (document.body.style.backgroundColor === 'white' || document.body.style.backgroundColor === '') {
+            var contenedor = document.getElementById('cv-container');
+            var titulos = document.getElementsByTagName('h2');
+            var boton = document.getElementById('boton-estilo');
+            if (document.body.style.backgroundColor === '' || document.body.style.backgroundColor === 'rgb(244, 244, 244)' || document.body.style.backgroundColor === '#f4f4f4') {
+                document.body.style.backgroundColor = '#222222';
+                document.body.style.color = 'white';
+                contenedor.style.backgroundColor = '#333333';
+                for(var i = 0; i < titulos.length; i++) {
+                    titulos[i].style.color = '#e0e0e0';
+                }
                 
-                document.body.style.backgroundColor = '#222222'; // Fondo oscuro
-                document.body.style.color = 'white';             // Texto blanco
-                document.getElementById('boton-estilo').textContent = 'Cambiar a Modo Claro';      // Cambiamos el texto del botón
-                
-            } else {
-                
-                // Si no, volvemos al modo claro
-                document.body.style.backgroundColor = 'white';
+                boton.textContent = 'Cambiar a Modo Claro';    
+                } 
+            else {
+                document.body.style.backgroundColor = '#f4f4f4';
                 document.body.style.color = 'black';
-                document.getElementById('boton-estilo').textContent = 'Cambiar a Modo Oscuro';
+                contenedor.style.backgroundColor = 'white';
                 
+                for(var i = 0; i < titulos.length; i++) {
+                    titulos[i].style.color = '#333333';
+                }
+                
+                boton.textContent = 'Cambiar a Modo Oscuro';
             }
         }
     </script>
 </head>
 <body>
-    <div class="contenedor">        
-        <button id="boton-estilo" onclick="cambiarColor()">Púlsame</button>
-    </div>
 
-<div class="container">
+<div class="container" id="cv-container">
+    
+    <div class="contenedor-boton">        
+        <button id="boton-estilo" onclick="cambiarColor()">Cambiar a Modo Oscuro</button>
+    </div>
 
     <header>
         <img src="Foto.jpg" alt="Foto de Perfil" class="foto-perfil">
@@ -101,9 +123,7 @@
     <section>
         <div class="item-section">
             <h2>Sobre mí</h2>
-            <p>
-                Me gusta la informática.
-            </p>
+            <p>Me gusta la informática.</p>
         </div>
 
         <div class="item-section">
