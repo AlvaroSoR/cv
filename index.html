@@ -64,8 +64,30 @@
             text-decoration: underline;
         }
     </style>
+        <script>
+        function cambiarColor(){
+            // Si el fondo actual es blanco (o está vacío), cambiamos a modo oscuro
+            if (document.body.style.backgroundColor === 'white' || document.body.style.backgroundColor === '') {
+                
+                document.body.style.backgroundColor = '#222222'; // Fondo oscuro
+                document.body.style.color = 'white';             // Texto blanco
+                document.getElementById('boton-estilo').textContent = 'Cambiar a Modo Claro';      // Cambiamos el texto del botón
+                
+            } else {
+                
+                // Si no, volvemos al modo claro
+                document.body.style.backgroundColor = 'white';
+                document.body.style.color = 'black';
+                document.getElementById('boton-estilo').textContent = 'Cambiar a Modo Oscuro';
+                
+            }
+        }
+    </script>
 </head>
 <body>
+    <div class="contenedor">        
+        <button id="boton-estilo" onclick="cambiarColor()">Púlsame</button>
+    </div>
 
 <div class="container">
 
